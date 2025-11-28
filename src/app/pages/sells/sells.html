@@ -1,1 +1,47 @@
-<p>sells works!</p>
+<div class="container">
+  <h2>Gestión de ventas GENUX</h2>
+  
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width: 100%;">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Idventas </th>
+      <td mat-cell *matCellDef="let ventas"> {{ventas.Idventas}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="idProducto">
+      <th mat-header-cell *matHeaderCellDef> idProducto </th>
+      <td mat-cell *matCellDef="let ventas"> {{ventas.idProducto}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="idClientes">
+      <th mat-header-cell *matHeaderCellDef> idClientes </th>
+      <td mat-cell *matCellDef="let ventas"> {{ventas.idClientes}} </td>
+    </ng-container>
+       <ng-container matColumnDef="cantidad">
+      <th mat-header-cell *matHeaderCellDef> cantidad</th>
+      <td mat-cell *matCellDef="let ventas"> {{ventas.cantidad}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="PrecioUnitario">
+      <th mat-header-cell *matHeaderCellDef> PrecioUnitario</th>
+      <td mat-cell *matCellDef="let ventas"> {{ventas.PrecioUnitario}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Total">
+      <th mat-header-cell *matHeaderCellDef> Total</th>
+      <td mat-cell *matCellDef="let ventas"> {{ventas.Total}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="FechaVenta">
+      <th mat-header-cell *matHeaderCellDef> FechaVenta</th>
+      <td mat-cell *matCellDef="let ventas"> {{ventas.FechaVenta}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator 
+      [pageSizeOptions]="[10, 50, 100]"
+      showFirstLastButtons
+      aria-label="Seleccionar página de elementos">
+  </mat-paginator>
+</div>

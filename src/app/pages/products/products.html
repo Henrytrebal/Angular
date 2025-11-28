@@ -1,1 +1,33 @@
-<p>products works!</p>
+<div class="container">
+  <h2>Productos GENUX</h2>
+  
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width: 100%;">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let producto"> {{producto.idProducto}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Nombre">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let producto"> {{producto.nombre}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Detalle">
+      <th mat-header-cell *matHeaderCellDef> Detalle </th>
+      <td mat-cell *matCellDef="let producto"> {{producto.detalle}} </td>
+    </ng-container>
+       <ng-container matColumnDef="Monto">
+      <th mat-header-cell *matHeaderCellDef> Monto</th>
+      <td mat-cell *matCellDef="let producto"> {{producto.monto}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator 
+      [pageSizeOptions]="[10, 50, 100]"
+      showFirstLastButtons
+      aria-label="Seleccionar página de elementos">
+  </mat-paginator>
+</div>
