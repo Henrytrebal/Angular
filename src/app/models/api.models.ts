@@ -23,7 +23,9 @@ export interface Ventas {
     cantidad: number;
     precioUnitario: number;
     total: number;
-    fechaVenta: string
+    fechaVenta: string;
+    producto: string;
+    cliente: string;
 
 }
 

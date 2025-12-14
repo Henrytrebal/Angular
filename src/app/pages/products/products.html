@@ -21,6 +21,14 @@
       <th mat-header-cell *matHeaderCellDef> Monto</th>
       <td mat-cell *matCellDef="let producto"> {{producto.monto}} </td>
     </ng-container>
+    <ng-container matColumnDef="Acciones">
+      <th mat-header-cell *matHeaderCellDef> Acciones</th>
+      <td mat-cell *matCellDef="let producto">
+        <button matIconButton  style="color: rgb(59, 59, 243);"  aria-label="delete"><mat-icon>edit</mat-icon></button>
+
+        <button matIconButton (click)="elimiardatos(producto.idProducto)" style="color: red;"   aria-label="delete"><mat-icon>delete</mat-icon></button>
+       
+    </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
